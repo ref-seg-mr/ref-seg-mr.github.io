@@ -35,16 +35,11 @@
                     <span class="inline-heading-2"><a href=#header class="scroll-link">Return to Top</a></span>
                     <span class="inline-heading"><a href=#TaskDescription class="scroll-link">1. Task Description</a></span>
                     <span class="inline-heading"><a href=#Network class="scroll-link">2. Network</a></span>
-                    <!-- <span class="inline-heading"><a href=#ExperimentsResults class="scroll-link">3. Experiments and
-                            Results</a></span>
-                    <p><a href=#DatasetOverview class="scroll-link">a. Dataset Overview</a></p> -->
-                    <!-- <p><a href=#Results class="scroll-link">b. Results</a></p> -->
                     <span class="inline-heading"><a href=#Results class="scroll-link">2. Results</a></span>
-                    <!-- <span class="inline-heading"><a href=#citation class="scroll-link">4. BibTeX</a></span> -->
-                </div> <!--navigation-->
-            </div> <!--navigation-content-->
-        </div> <!--navigateAndButton-->
-    </div> <!--toggle-container-->
+                </div> 
+            </div> 
+        </div> 
+    </div> 
 
     <div class="outer-container">
 
@@ -96,6 +91,8 @@
             <p class="authors">
                 <span class="author" id="author1">Anonymous</span>
             </p>
+
+            <p>The dataset, code, and trained model weights will be publicly available after anonymous peer review.</p>
         </div>
 
         <!-- <div class="section" , id="Highlights">
@@ -139,9 +136,15 @@
                 <div id="networkImage">
                     <img src="static/images/arch.png" class="image" id="networkImage" alt="">
                 </div>
-                <!-- <p>
-                    Overview of the XXXXX architecture. 
-                </p> -->
+                <!-- <figcaption>Architecture of 1-2-3-∞.</figcaption> -->
+                <p>
+                    Architecture of 1-2-3-∞. The visual prompt along with the reference image
+                    are used to extract image features corresponding to the prompted region to form visual
+                    tokens. Learnable object queries and visual tokens cross-attend to the target image
+                    features and self-attend within themselves. The object queries are linearly mapped to
+                    mask embeddings and class embeddings, which are used to output the segmentation
+                    mask and the text label respectively. 
+                </p>
             </div>
         </div>
 
