@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="1-2-3-∞">
+    <meta name="keywords" content="All You Need Is A Reference">
     <meta name="description" content="Cross-modality Referring Segmentation for Abdominal MRI">
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -21,7 +21,7 @@
     <!--Jquery-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js" defer=""></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js" defer=""></script>
-    <title>1-2-3-∞: Segment everything in every modality for Abdominal MRIs</title>
+    <title>All You Need Is A Reference: Cross-modality Referring Segmentation for Abdominal MRI</title>
 </head>
 
 <body>
@@ -36,15 +36,15 @@
                     <span class="inline-heading"><a href=#TaskDescription class="scroll-link">1. Task Description</a></span>
                     <span class="inline-heading"><a href=#Network class="scroll-link">2. Network</a></span>
                     <span class="inline-heading"><a href=#Results class="scroll-link">2. Results</a></span>
-                </div> 
-            </div> 
-        </div> 
-    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="outer-container">
 
         <div class="header" , id="header">
-            <h1>1-2-3-∞</h1>
+            <h1>All You Need Is A Reference</h1>
             <p class="subheading">Cross-modality Referring Segmentation for Abdominal MRI</p>
             <p class="paper-links">
                 <a href="" target="_blank" rel=noopener>
@@ -116,13 +116,15 @@
                 <div id="taskDescriptionImage">
                     <img src="static/images/illust.png" class="image" alt="">
                 </div>
-                <p><strong>Referring segmentation in multi-modality MRI images.</strong></p>
+                <p><strong>Task definition of referring segmentation in multi-modality MRI images.</strong></p>
                 <ol style="list-style-type: lower-alpha;">
-                    <li>The training data consists of five modalities, T1w, T2w, DWI, In-phase, and Opposed-phase MR
-                        images.</li>
-                    <li>During inference, users input the reference image with visual prompts such as scribbles to the
-                        model. The model outputs segmentation masks of all MR modalities corresponding to the scribbled
-                        organs.</li>
+                    <li>Patients undergo five modalities, including one reference modality T1w and four target
+                        modalities: T2w, DWI, In-phase, and Opposed-phase. The task is to generate segmentation masks
+                        for all the target modalities based on one reference modality.
+                    </li>
+                    <li>Clinical application scenarios: Users first draw scribbles on the reference modality. Then, the
+                        model simultaneously outputs segmentation masks for the other MR modalities corresponding to the
+                        scribbled organs.</li>
                 </ol>
 
             </div>
@@ -138,18 +140,18 @@
                 </div>
                 <!-- <figcaption>Architecture of 1-2-3-∞.</figcaption> -->
                 <p>
-                    Architecture of 1-2-3-∞. The visual prompt along with the reference image
-                    are used to extract image features corresponding to the prompted region to form visual
-                    tokens. Learnable object queries and visual tokens cross-attend to the target image
-                    features and self-attend within themselves. The object queries are linearly mapped to
-                    mask embeddings and class embeddings, which are used to output the segmentation
-                    mask and the text label respectively. 
+                    CrossMR Architecture.
+                    The scribble prompt along with the reference image are used to produce image features corresponding
+                    to the prompted region to form visual tokens. Learnable object queries and visual tokens
+                    cross-attend to the target image features and self-attend within themselves. The object queries are
+                    linearly mapped to mask embeddings and class embeddings, which are used to output the segmentation
+                    mask and the text label, respectively.
                 </p>
             </div>
         </div>
 
         <div class="section" , id="Results">
-            
+
             <h2>Results</h2>
             <!-- <p>
                 results demonstrate that.
@@ -158,8 +160,7 @@
             <div class="subsection" id="Table1">
                 <table>
                     <caption><strong>Table 1. Quantitative segmentation results.</strong> Organ-wise DSC scores of the
-                        base-
-                        line model and proposed method across one in-distribution modality (T1w) and four
+                        baseline model and proposed method across one in-distribution modality (T1w) and four
                         out-of-distribution modalities (T2w, DWI, In-phase, and Opposed-phase).</caption>
                 </table>
                 <img src="static/images/Table1.png" , class="image" alt="">
