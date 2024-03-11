@@ -465,29 +465,32 @@ button.active {
 }
 
 .video-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
-}
-
-.video-grid div {
     display: flex;
-    align-items: center;
     justify-content: center;
+    padding: 20px;
 }
 
-.video-grid div video {
+.video-container {
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-container video {
     width: 100%;
     height: auto;
 }
 
 @media screen and (max-width: 600px) {
     .video-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(4, auto);
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    .video-container {
+        max-width: 100%;
     }
 }
+
 
 .image {
     margin-top: 0;
