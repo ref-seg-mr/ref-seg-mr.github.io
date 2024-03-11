@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    $("#demoVideo").on("canplay", function() {
+      this.playbackRate = 1.5;
+    });
     const toggleButton = document.getElementById("toggleButton");
     const root = document.documentElement;
 
